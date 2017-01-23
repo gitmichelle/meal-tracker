@@ -15,9 +15,6 @@ var AppComponent = (function () {
         ];
         this.selectedMeal = this.meals[0];
     }
-    AppComponent.prototype.editMeal = function () {
-        alert("You just requested to edit a Meal!");
-    };
     AppComponent.prototype.priorityColor = function (currentMeal) {
         if (currentMeal.calories >= 500) {
             return "bg-danger";
@@ -26,12 +23,15 @@ var AppComponent = (function () {
             return "bg-success";
         }
     };
+    AppComponent.prototype.editMeal = function (clickedMeal) {
+        this.selectedMeal = clickedMeal;
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'app-root',
-        template: "\n  <div class=\"container\">\n    <h1>Meal List</h1>\n    <ul>\n       <li [class]=\"priorityColor(currentMeal)\" *ngFor=\"let currentMeal of meals\">{{currentMeal.name}} // {{currentMeal.details}} // {{currentMeal.calories}} calories <button type=\"button\" class=\"btn btn-default\" (click)=\"editMeal()\">Edit</button></li>\n     </ul>\n     <hr>\n    <div>\n     <h3>{{selectedMeal.name}}</h3>\n    <h3>Edit Meal</h3>\n    <label>Enter Meal Name:</label>\n    <input [(ngModel)]=\"selectedMeal.name\">\n    <label>Enter Meal Details:</label>\n    <input [(ngModel)]=\"selectedMeal.details\">\n    <label>Enter Meal Calories:</label>\n    <input [(ngModel)]=\"selectedMeal.calories\">\n     <br>\n    </div>\n  </div>\n  "
+        template: "\n  <div class=\"container\">\n    <h1>Meal List</h1>\n    <ul>\n       <li [class]=\"priorityColor(currentMeal)\" *ngFor=\"let currentMeal of meals\">{{currentMeal.name}} // {{currentMeal.details}} // {{currentMeal.calories}} calories <button type=\"button\" class=\"btn btn-default\" (click)=\"editMeal(currentMeal)\">Edit</button></li>\n     </ul>\n     <hr>\n    <div>\n     <h3>{{selectedMeal.name}}</h3>\n    <h3>Edit Meal</h3>\n    <label>Enter Meal Name:</label>\n    <input [(ngModel)]=\"selectedMeal.name\">\n    <label>Enter Meal Details:</label>\n    <input [(ngModel)]=\"selectedMeal.details\">\n    <label>Enter Meal Calories:</label>\n    <input [(ngModel)]=\"selectedMeal.calories\">\n     <br>\n    </div>\n  </div>\n  "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

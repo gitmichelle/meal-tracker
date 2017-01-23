@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   <div class="container">
     <h1>Meal List</h1>
     <ul>
-       <li [class]="priorityColor(currentMeal)" *ngFor="let currentMeal of meals">{{currentMeal.name}} // {{currentMeal.details}} // {{currentMeal.calories}} calories <button type="button" class="btn btn-default" (click)="editMeal()">Edit</button></li>
+       <li [class]="priorityColor(currentMeal)" *ngFor="let currentMeal of meals">{{currentMeal.name}} // {{currentMeal.details}} // {{currentMeal.calories}} calories <button type="button" class="btn btn-default" (click)="editMeal(currentMeal)">Edit</button></li>
      </ul>
      <hr>
     <div>
@@ -32,15 +32,15 @@ export class AppComponent {
   ];
   selectedMeal: Meal = this.meals[0];
 
-  editMeal() {
-    alert("You just requested to edit a Meal!");
-  }
   priorityColor(currentMeal){
     if (currentMeal.calories >= 500){
       return "bg-danger";
     } else {
       return "bg-success";
     }
+  }
+  editMeal(clickedMeal) {
+    this.selectedMeal = clickedMeal;
   }
 }
 
