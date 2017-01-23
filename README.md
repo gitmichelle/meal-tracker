@@ -15,9 +15,9 @@ _This is a meal tracking application. Users should be able to log foods they've 
 * Example Details: Pepperoni
 * Example Calories: 800
 
-####_It can view a list of foods logged.
-####_It has options to view all foods, only high-calorie foods (more than 500 calories), or only lower-calorie foods (less than 500 calories).
-####_It can edit a food's name, details or calories.
+####_It can view a list of foods logged._
+####_It has options to view all foods, only high-calorie foods (more than 500 calories), or only lower-calorie foods (less than 500 calories)._
+####_It can edit a food's name, details or calories._
 
 ## Prerequisites
 
