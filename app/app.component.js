@@ -17,12 +17,20 @@ var AppComponent = (function () {
     AppComponent.prototype.editMeal = function () {
         alert("You just requested to edit a Meal!");
     };
+    AppComponent.prototype.priorityColor = function (currentMeal) {
+        if (currentMeal.calories >= 500) {
+            return "bg-danger";
+        }
+        else {
+            return "bg-success";
+        }
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'app-root',
-        template: "\n  <div class=\"container\">\n    <h1>Meal List</h1>\n    <ul>\n       <li *ngFor=\"let currentMeal of meals\">{{currentMeal.name}} // {{currentMeal.details}} // {{currentMeal.calories}} calories <button type=\"button\" class=\"btn btn-info\" (click)=\"editMeal()\">Edit</button></li>\n     </ul>\n  </div>\n  "
+        template: "\n  <div class=\"container\">\n    <h1>Meal List</h1>\n    <ul>\n       <li [class]=\"priorityColor(currentMeal)\" *ngFor=\"let currentMeal of meals\">{{currentMeal.name}} // {{currentMeal.details}} // {{currentMeal.calories}} calories <button type=\"button\" class=\"btn btn-default\" (click)=\"editMeal()\">Edit</button></li>\n     </ul>\n  </div>\n  "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
