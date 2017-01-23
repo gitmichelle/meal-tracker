@@ -39,7 +39,7 @@ You will need the following properly installed on your computer.
 ## Running / Development
 * `gulp build`
 * `gulp serve`
-* Visit your app at [(http://localhost:3000/)].
+* Visit your app at [http://localhost:3000/](http://localhost:3000/).
 
 
 ## Technologies Used
