@@ -14,12 +14,15 @@ var AppComponent = (function () {
             new Meal('Salmon and side salad', 'No dairy or gluten in meal', 375)
         ];
     }
+    AppComponent.prototype.editMeal = function () {
+        alert("You just requested to edit a Meal!");
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'app-root',
-        template: "\n  <div class=\"container\">\n    <h1>Meal List</h1>\n    <ul>\n       <li *ngFor=\"let currentMeal of meals\">{{currentMeal.name}} // {{currentMeal.details}} // {{currentMeal.calories}} calories</li>\n     </ul>\n  </div>\n  "
+        template: "\n  <div class=\"container\">\n    <h1>Meal List</h1>\n    <ul>\n       <li *ngFor=\"let currentMeal of meals\">{{currentMeal.name}} // {{currentMeal.details}} // {{currentMeal.calories}} calories <button type=\"button\" class=\"btn btn-info\" (click)=\"editMeal()\">Edit</button></li>\n     </ul>\n  </div>\n  "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

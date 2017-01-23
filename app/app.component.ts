@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   <div class="container">
     <h1>Meal List</h1>
     <ul>
-       <li *ngFor="let currentMeal of meals">{{currentMeal.name}} // {{currentMeal.details}} // {{currentMeal.calories}} calories</li>
+       <li *ngFor="let currentMeal of meals">{{currentMeal.name}} // {{currentMeal.details}} // {{currentMeal.calories}} calories <button type="button" class="btn btn-info" (click)="editMeal()">Edit</button></li>
      </ul>
   </div>
   `
@@ -18,6 +18,9 @@ export class AppComponent {
     new Meal('Chicken and veggies','Roasted both', 350),
     new Meal('Salmon and side salad', 'No dairy or gluten in meal', 375)
   ];
+  editMeal() {
+    alert("You just requested to edit a Meal!");
+  }
 }
 
 export class Meal {
