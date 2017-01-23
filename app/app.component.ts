@@ -7,7 +7,7 @@ import { Meal } from './meal.model';
   <div class="container">
     <h1>Meal List</h1>
     <hr>
-    <meal-list></meal-list>
+    <meal-list [childMealList]="masterMealList"></meal-list>
     <div>
       <div *ngIf="selectedMeal">
         <h3>{{selectedMeal.name}}</h3>
@@ -29,6 +29,12 @@ import { Meal } from './meal.model';
 
 export class AppComponent {
   selectedMeal = null;
+
+  masterMealList: Meal[] = [
+    new Meal('Burger and fries','Only ate half of the fries', 650),
+    new Meal('Chicken and veggies','Roasted both', 350),
+    new Meal('Salmon and side salad', 'No dairy or gluten in meal', 375)
+  ];
 
   editMeal(clickedMeal) {
     this.selectedMeal = clickedMeal;
