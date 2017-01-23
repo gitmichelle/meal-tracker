@@ -9,13 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var meal_model_1 = require('./meal.model');
 var AppComponent = (function () {
     function AppComponent() {
+        this.selectedTask = null;
+        this.masterMealList = [
+            new meal_model_1.Meal('Burger and fries', 'Ordered a small fry', 650),
+            new meal_model_1.Meal('Chicken breast and veggies', 'Roasted', 350),
+            new meal_model_1.Meal('Salmon and side salad', 'Side salad had no dairy', 375)
+        ];
     }
+    AppComponent.prototype.editMeal = function (clickedMeal) {
+        this.selectedMeal = clickedMeal;
+    };
+    AppComponent.prototype.finishedEditing = function () {
+        this.selectedMeal = null;
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app-root',
-            template: "\n  <h1>My First Angular 2 App</h1>\n  "
+            template: "\n  <div class=\"container\">\n    <h1>Meal Tracker</h1>\n    <meal-list [childMealList]=\"masterMealList\" (clickSender)=\"editMeal($event)\"></meal-list>\n\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
