@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var app_component_1 = require('./app.component');
 var forms_1 = require('@angular/forms');
+// import { MealListComponent }  from './meal-list.component';
 var AppModule = (function () {
     function AppModule() {
     }
