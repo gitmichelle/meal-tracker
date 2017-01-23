@@ -21,7 +21,7 @@ _This is a meal tracking application. Users should be able to log foods they've 
 
 ## Prerequisites
 
-You will need the following things properly installed on your computer.
+You will need the following properly installed on your computer.
 
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) (with NPM)
