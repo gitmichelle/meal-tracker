@@ -27,6 +27,7 @@ var AppComponent = (function () {
     };
     AppComponent.prototype.addMeal = function (newMealFromChild) {
         this.masterMealList.push(newMealFromChild);
+        console.log(newMealFromChild);
     };
     AppComponent = __decorate([
         core_1.Component({
