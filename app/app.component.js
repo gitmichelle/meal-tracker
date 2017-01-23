@@ -32,7 +32,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app-root',
-            template: "\n  <div class=\"container\">\n    <h1>Meal List</h1>\n    <hr>\n    <meal-list [childMealList]=\"masterMealList\" (clickSender)=\"editMeal($event)\"></meal-list>\n    <hr>\n    <edit-meal [childSelectedMeal]=\"selectedMeal\" (doneButtonClickedSender)=\"finishedEditing()\"></edit-meal>\n    <new-meal (newMealSender)=\"addMeal($event)\"></new-meal>\n  </div>\n  "
+            template: "\n  <div class=\"container\">\n    <h1>Meal Tracker</h1>\n    <hr>\n    <meal-list [childMealList]=\"masterMealList\" (clickSender)=\"editMeal($event)\"></meal-list>\n    <hr>\n    <edit-meal [childSelectedMeal]=\"selectedMeal\" (doneButtonClickedSender)=\"finishedEditing()\"></edit-meal>\n    <new-meal (newMealSender)=\"addMeal($event)\"></new-meal>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

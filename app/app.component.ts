@@ -5,7 +5,7 @@ import { Meal } from './meal.model';
   selector: 'app-root',
   template: `
   <div class="container">
-    <h1>Meal List</h1>
+    <h1>Meal Tracker</h1>
     <hr>
     <meal-list [childMealList]="masterMealList" (clickSender)="editMeal($event)"></meal-list>
     <hr>
