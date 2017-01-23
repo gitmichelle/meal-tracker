@@ -7,22 +7,9 @@ import { Meal } from './meal.model';
   <div class="container">
     <h1>Meal List</h1>
     <hr>
-    <meal-list [childMealList]="masterMealList"></meal-list>
-    <div>
-      <div *ngIf="selectedMeal">
-        <h3>{{selectedMeal.name}}</h3>
-        <hr>
-        <h3>Edit Meal</h3>
-        <label>Enter Meal Name:</label>
-        <input [(ngModel)]="selectedMeal.name">
-        <label>Enter Meal Details:</label>
-        <input [(ngModel)]="selectedMeal.details">
-        <label>Enter Meal Calories:</label>
-        <input [(ngModel)]="selectedMeal.calories">
-         <br>
-         <button type="button" class="btn btn-info" (click)="finishedEditing()">Done</button>
-       </div>
-    </div>
+    <meal-list [childMealList]="masterMealList" (clickSender)="editMeal($event)"></meal-list>
+    <hr>
+    <edit-meal [childSelectedMeal]="selectedMeal" (doneButtonClickedSender)="finishedEditing()"></edit-meal>
   </div>
   `
 })
@@ -39,6 +26,7 @@ export class AppComponent {
   editMeal(clickedMeal) {
     this.selectedMeal = clickedMeal;
   }
+  
   finishedEditing() {
     this.selectedMeal = null;
   }
